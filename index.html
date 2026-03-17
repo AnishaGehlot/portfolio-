@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anisha Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    nav {
+      background: #020617;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav h2 {
+      color: #38bdf8;
+      font-size: 28px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 22px;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    /* Section */
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+
+    /* About */
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      color: #dbeafe;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      background: #0f172a;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .project-card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #dbeafe;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    /* Contact */
+    .contact form {
+      max-width: 650px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .contact textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+      font-size: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>Portfolio</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <span>Anisha Gehlot</span></h1>
+      <p>Student | Aspiring Web Developer | Tech Enthusiast</p>
+      <button class="btn" onclick="goToContact()">Hire Me</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I am Anisha Gehlot, a passionate student with interest in web development,
+        software projects, and creative design. I enjoy building clean and simple
+        websites, learning new technologies, and working on innovative ideas that
+        solve real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">C Programming</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Flutter</div>
+        <div class="skill-card">Firebase</div>
+        <div class="skill-card">Canva Design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>
+            A personal portfolio website created using HTML, CSS, and JavaScript
+            to showcase my profile, skills, and projects.
+          </p>
+          <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Deepfake Detection Project</h3>
+          <p>
+            A project focused on identifying manipulated media using machine learning
+            and deep learning concepts for better digital security.
+          </p>
+          <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Student Management System</h3>
+          <p>
+            A simple system for managing student details, records, and academic
+            information in an organized way.
+          </p>
+          <a href="#">View Project</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <textarea id="message" placeholder="Enter your message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Anisha Gehlot | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function goToContact() {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      alert("Thank you, " + name + "! Your message has been sent successfully.");
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+</body>
+</html>
